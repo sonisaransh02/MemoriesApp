@@ -1,0 +1,27 @@
+@import "../../../sass-styles/functions";
+
+.hero {
+  background-color: get-color("dark");
+  &container {
+    background-color: get-color("dark");
+  }
+  &content {
+    h1,
+    p {
+      color: get-color("light");
+    }
+  }
+  @media all and (min-width: 992px) {
+    &container {
+      height: 100vh;
+    }
+  }
+  @media all and (max-width: 992px) {
+    &content {
+      text-align: center;
+    }
+  }
+  &details {
+    justify-content: center;
+  }
+}
