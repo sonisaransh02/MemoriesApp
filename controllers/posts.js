@@ -19,15 +19,7 @@ const posts = async (req, res, next) => {
         const postMessages = await postInfo.find({ creator: req.userId });
         console.log("fetched posts", postMessages);
         res.status(200).json(postMessages);
-        // const posts = await getdata(req.userId);
-        
-        // if(posts !== null) {
-        //     res.status(200).json(posts);
-        // } else {
-        //     const postMessages = await postInfo.find({ creator: req.userId }).select('-creator');
-        //     client.setex(`posts/${req.userId}`, 20, JSON.stringify(postMessages))
-        //     res.status(200).json(postMessages);
-        // }
+
     } catch (error) {
         console.log(error.status);
         next(createError.NotFound())
